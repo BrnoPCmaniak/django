@@ -394,7 +394,7 @@ Limitations with string literals
 --------------------------------
 
 Django's template language has no way to escape the characters used for its own
-syntax. For example, the :ttag:`templatetag` tag is required if you need to
+syntax in tags. For example, the :ttag:`templatetag` tag is required if you need to
 output character sequences like ``{%`` and ``%}``.
 
 A similar issue exists if you want to include these sequences in template filter
@@ -414,6 +414,11 @@ arguments::
 
 If you need to use strings with these sequences, store them in template
 variables or use a custom template tag or filter to workaround the limitation.
+
+.. note::
+
+  If you need to use ``{%`` ``%}`` or any other django syntax in template, not in tags, you can use
+  :ttag:`verbatim` tag.
 
 .. _playing-with-context:
 
